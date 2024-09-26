@@ -39,12 +39,12 @@ return {
 };
 })();
 
+//Looping through pokemonList and displaying Pokemon
 pokemonRepository.getAll().forEach(function(pokemon) {
-  if (pokemon.height > 6) {
-    document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ') - Wow, that’s big! </p>');
-  } else {
-    document.write('<p>' + pokemon.name + '(height: ' + pokemon.height + ')</p>');
-  }
+  let listItem = document.createElement('li');
+
+  let button = document.createElement('button');
+  button.innerText = pokemon.name;
 });
 
 //Adding new Pokemon to the repository
