@@ -39,6 +39,13 @@ return {
 };
 })();
 
+//Adding new Pokemon to the repository
+pokemonRepository.add({
+  name:'Pikachu',
+  height: 4,
+  types: ['electric']
+});
+
 //Looping through pokemonList and displaying Pokemon
 pokemonRepository.getAll().forEach(function(pokemon) {
   let listItem = document.createElement('li');
@@ -55,12 +62,6 @@ let pokemonListElement = document.querySelector('.pokemon-list');
 pokemonListElement.appendChild(listItem);
 });
 
-//Adding new Pokemon to the repository
-pokemonRepository.add({
-  name:'Pikachu',
-  height: 4,
-  types: ['electric']
-});
 
 //Verify the new Pokemon is added
 console.log(pokemonRepository.getAll());
