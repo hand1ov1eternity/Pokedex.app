@@ -1,4 +1,16 @@
-.pokemon-button {
+body {
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    padding: 20px; 
+    background-color: #f4f4f4; 
+  }
+  
+  .pokemon-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+  }
+  
+  .pokemon-button {
     background-color: #4CAF50; /* Green background */
     color: white; /* White text */
     border: none; /* Remove border */
@@ -12,7 +24,19 @@
     border-radius: 5px; /* Rounded corners */
   }
   
-  /* Optional: Add hover effect */
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    .pokemon-list {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items */
+    }
+  
+    .pokemon-button {
+      width: 100%; /* Make buttons full width on small screens */
+    }
+  }
+  
   .pokemon-button:hover {
     background-color: #45a049; /* Darker green on hover */
   }
