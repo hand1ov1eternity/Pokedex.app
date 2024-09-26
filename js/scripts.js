@@ -45,6 +45,14 @@ pokemonRepository.getAll().forEach(function(pokemon) {
 
   let button = document.createElement('button');
   button.innerText = pokemon.name;
+
+
+button.classList.add('pokemon-button');
+
+listItem.appendChild(button);
+
+let pokemonListElement = document.querySelector('.pokemon-list');
+pokemonListElement.appendChild(listItem);
 });
 
 //Adding new Pokemon to the repository
