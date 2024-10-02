@@ -18,7 +18,7 @@ let pokemonRepository = (function() {
   }
 
   //Function to load the complete list of Pokemon from the API
-  function loadlist() {
+  function loadList() {
     return fetch(apiUrl).then(function(response){
       return response.json();
     }).then(function(json){
