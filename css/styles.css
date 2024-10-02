@@ -40,3 +40,53 @@ body {
   .pokemon-button:hover {
     background-color: #45a049; /* Darker green on hover */
   }
+
+/*Modal Styles*/
+  .modal-container{
+    display: none;
+    position: fixed;
+    z-index: 1000; /*sit on top*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /*enable scroll if needed*/
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px; /* Max width */
+  }
+
+.close-button {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: red;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.modal-image {
+    max-width: 100%;
+    height: auto;
+    display: block; /* center image*/
+    margin-top: 0 auto; 
+}
+
+.modal-details {
+    margin-top: 15px;
+    font-size: 18px;
+}

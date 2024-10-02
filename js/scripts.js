@@ -68,14 +68,50 @@ let pokemonRepository = (function() {
     pokemonListElement.appendChild(listItem); // Appending the list item to the ul
   }
 
-  // Show details when a Pokemon is clicked
-  function showDetails(pokemon) {
-    loadDetails(pokemon).then(function() {
-      console.log(pokemon);
-    });
+  // Function to show the modal with Pokemon details
+  function showDetails(pokemon){
+    loadDetails(pokemon).then(function(){
+      let modal = document.querySelector('#modal-container');
+      let modalTitle = document.querySelector('.modal-title');
+      let modalImage = document.querySelector('.modal-image');
+      let modalDetails = document.querySelector('.modal-details');
+
+      modalTitle.innerText = pokemon.name; // set pokemon name 
+      modalImage.src = pokemon.imageUrl; // set image source 
+      modalDetails.innerText = 'Height:' + pokemon.height + 'decimeters'; // set pokemon height 
+
+    // Display the modal
+    modal.style.display ='block'; // show the modal
+  }).catch(function(e) {
+    console.error(e); // handle errors if any
+  });
   }
 
-  // Return an object exposing the getAll, add, addListItem, loadListfunctions and loadDetails functions
+  // Function to close the modal
+  function closeModal() {
+    let modal = document.querySelector('#modal-container');
+    modal.style.display = 'none'; //hide the modal
+  }
+
+  // Close the modal when clicking outside of it
+  window.addEventListener('click', function(event) {
+    let modal = document.querySelector('#modal-container');
+    if (event.target === modal) {
+      closeModal(); // close modal if clicked outside
+    }
+  });
+
+  // Close the modal when pressing the Escape key
+  window.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeModal(); // Close modal on Escape key
+    }
+  });
+
+  // Close button event listener
+  document.querySelector('.close-button').addEventListener('click', closeModal); // close modal on close button click
+
+ 
   return {
     getAll: getAll,
     add: add,
