@@ -42,7 +42,7 @@ body {
   }
 
 /*Modal Styles*/
-  .modal-container{
+  #modal-container{
     display: none;
     position: fixed;
     z-index: 1000; /*sit on top*/

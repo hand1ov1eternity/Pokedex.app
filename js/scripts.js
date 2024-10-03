@@ -76,6 +76,10 @@ let pokemonRepository = (function() {
       let modalImage = document.querySelector('.modal-image');
       let modalDetails = document.querySelector('.modal-details');
 
+      // Close modal using the close button
+      let closeButtonElement = document.querySelector('.close-button');
+      closeButtonElement.addEventListener('click', closeModal);
+
       modalTitle.innerText = pokemon.name; // set pokemon name 
       modalImage.src = pokemon.imageUrl; // set image source 
       modalDetails.innerText = 'Height:' + pokemon.height + 'decimeters'; // set pokemon height 
@@ -108,10 +112,6 @@ let pokemonRepository = (function() {
     }
   });
 
-  // Close button event listener
-  document.querySelector('.close-button').addEventListener('click', closeModal); // close modal on close button click
-
- 
   return {
     getAll: getAll,
     add: add,
