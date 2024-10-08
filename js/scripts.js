@@ -51,69 +51,43 @@ let pokemonRepository = (function() {
   // Function to add a list item for a single Pokémon
   function addListItem(pokemon) {
     let listItem = document.createElement('li'); // Creating a new <li> element
-    listItem.classList.add('list-group-item'); //Add Bootstrap class
+    listItem.classList.add('list-group-item'); // Add Bootstrap class
 
     let button = document.createElement('button'); // Creating a new button element
     button.innerText = pokemon.name; // Setting the button's text to the Pokémon's name
-    button.classList.add('btn', 'btn-primary', 'w-100'); // Adding a class to the button/Bootstrap button classes
+    button.classList.add('btn', 'btn-primary', 'pokemon-button'); // Adding Bootstrap button classes
 
-       // Add event listener to the button
-       button.addEventListener('click', function() {
-        showDetails(pokemon); 
-      });
-    
-    // Appending the button to the list item,then list item to the Pokemon list
+    // Set attributes for Bootstrap modal
+    button.setAttribute('data-toggle', 'modal');
+    button.setAttribute('data-target', '#pokemonModal');
+
+    // Add event listener to the button
+    button.addEventListener('click', function() {
+      showDetails(pokemon); 
+    });
+
+    // Appending the button to the list item and then list item to the Pokemon list
     listItem.appendChild(button);
-    document.querySelector('.pokemon-list').appendChild(listItem);
-    
-    // Appending the list item to the Pokémon list
-    let pokemonListElement = document.querySelector('.pokemon-list'); // Selecting the ul element
-    pokemonListElement.appendChild(listItem); // Appending the list item to the ul
+    document.querySelector('.pokemon-list').appendChild(listItem); // Keep this line
   }
 
-  // Function to show the modal with Pokemon details
+  // Function to show the modal with Pokemon details using Bootstrap modal selectors
   function showDetails(pokemon){
     loadDetails(pokemon).then(function(){
-      let modal = document.querySelector('#modal-container');
       let modalTitle = document.querySelector('.modal-title');
       let modalImage = document.querySelector('.modal-image');
       let modalDetails = document.querySelector('.modal-details');
 
-      // Close modal using the close button
-      let closeButtonElement = document.querySelector('.close-button');
-      closeButtonElement.addEventListener('click', closeModal);
-
       modalTitle.innerText = pokemon.name; // set pokemon name 
       modalImage.src = pokemon.imageUrl; // set image source 
-      modalDetails.innerText = 'Height:' + pokemon.height + 'decimeters'; // set pokemon height 
+      modalDetails.innerText = 'Height: ' + pokemon.height + ' decimeters'; // set pokemon height 
 
-    // Display the modal
-    modal.style.display ='block'; // show the modal
-  }).catch(function(e) {
-    console.error(e); // handle errors if any
-  });
+      // Display the modal with Bootstrap's modal methods
+      $('#pokemonModal').modal('show'); // show the modal
+    }).catch(function(e) {
+      console.error(e); // handle errors if any
+    });
   }
-
-  // Function to close the modal
-  function closeModal() {
-    let modal = document.querySelector('#modal-container');
-    modal.style.display = 'none'; //hide the modal
-  }
-
-  // Close the modal when clicking outside of it
-  window.addEventListener('click', function(event) {
-    let modal = document.querySelector('#modal-container');
-    if (event.target === modal) {
-      closeModal(); // close modal if clicked outside
-    }
-  });
-
-  // Close the modal when pressing the Escape key
-  window.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-      closeModal(); // Close modal on Escape key
-    }
-  });
 
   return {
     getAll: getAll,
@@ -124,13 +98,12 @@ let pokemonRepository = (function() {
   };
 })();
 
-//Load the list of Pokemon from API and display them
+// Load the list of Pokemon from API and display them
 pokemonRepository.loadList().then(function() { // Using loadList() to get the Pokémon
   pokemonRepository.getAll().forEach(function(pokemon) {
     pokemonRepository.addListItem(pokemon); // Using the addListItem function
   });
 });
-
 
 
 
