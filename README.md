@@ -1,4 +1,4 @@
-Pokémon Repository
+**Pokémon Repository**
 
 Overview
 The Pokémon Repository is a web application that allows users to browse a list of Pokémons and view their details. It serves as a practical project for learning JavaScript, API interactions, and responsive design using Bootstrap.
