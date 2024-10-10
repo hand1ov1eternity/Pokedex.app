@@ -1,4 +1,4 @@
-**Pokémon Repository**
+**POKEMON REPOSITORY**
 
 **Overview**
 
