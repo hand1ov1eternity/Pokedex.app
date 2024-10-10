@@ -51,11 +51,11 @@ let pokemonRepository = (function() {
   // Function to add a list item for a single Pokémon
   function addListItem(pokemon) {
     let listItem = document.createElement('li'); // Creating a new <li> element
-    listItem.classList.add('list-group-item'); // Add Bootstrap class
+    listItem.classList.add('list-group-item', 'text-center'); // Add Bootstrap class
 
     let button = document.createElement('button'); // Creating a new button element
     button.innerText = pokemon.name; // Setting the button's text to the Pokémon's name
-    button.classList.add('btn', 'btn-primary', 'pokemon-button'); // Adding Bootstrap button classes
+    button.classList.add('btn', 'pokemon-button', 'mx-auto'); // Adding Bootstrap button classes
 
     // Set attributes for Bootstrap modal
     button.setAttribute('data-toggle', 'modal');
