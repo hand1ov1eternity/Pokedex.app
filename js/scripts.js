@@ -80,7 +80,8 @@ let pokemonRepository = (function() {
 
       modalTitle.innerText = pokemon.name; // set pokemon name 
       modalImage.src = pokemon.imageUrl; // set image source 
-      modalDetails.innerText = 'Height: ' + pokemon.height + ' decimeters'; // set pokemon height 
+      modalDetails.innerText = 'Height: ' + (pokemon.height * 10) + 'cm'; // set pokemon height 
+      modalDetails.innerText += '\nType: ' + pokemon.types.join(', '); // append types
 
       // Display the modal with Bootstrap's modal methods
       $('#pokemonModal').modal('show'); // show the modal
