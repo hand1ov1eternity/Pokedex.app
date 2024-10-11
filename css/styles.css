@@ -15,6 +15,7 @@ body {
 
 .pokemon-list li {
   margin: 10px; /* Add margin around list items */
+  list-style-type: none; /* Remove bullet points */
 }
 
 .pokemon-button {
@@ -22,6 +23,7 @@ body {
   color: white; /* Text color */
   border: none; /* No border */
   border-radius: 5px; /* Rounded corners */
+  width: 100%; /* Make buttons full width inside their column */
 }
 
 .pokemon-button:hover {
@@ -46,6 +48,10 @@ body {
 /* Modal title */
 .modal-title {
   font-weight: bold; /* Bold title */
+}
+
+.modal-dialog {
+  max-width: 200px; /* Set the maximum width of the modal */
 }
 
 /* Responsive styles */
