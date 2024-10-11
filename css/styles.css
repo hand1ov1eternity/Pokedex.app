@@ -60,6 +60,13 @@ body {
   }
 }
 
+#search-input {
+  width: 100%; /* Full width */
+  padding: 10px; /* Add padding */
+  font-size: 16px; /* Adjust font size */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+}
 
 
 
