@@ -33,6 +33,6 @@ Custom CSS enhances the visual appearance and user experience.
 
 Clone the repository:
 
-git clone https://github.com/hand1ov1eternity/simple.js.app
+git clone https://github.com/hand1ov1eternity/Pokedex.app
 
 Open the index.html file in a browser to use the app.
