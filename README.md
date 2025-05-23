@@ -17,10 +17,10 @@
 
 ## 🛠️ Technologies Used
 
-HTML5
-CSS3
-JavaScript
-Bootstrap
+HTML5,
+CSS3,
+JavaScript,
+Bootstrap,
 PokéAPI (https://pokeapi.co/)
 
 
@@ -40,9 +40,9 @@ PokéAPI (https://pokeapi.co/)
 ## 📦 Installation
 
 To run locally:
-git clone https://github.com/hand1ov1eternity/Pokedex.app
+git clone https://github.com/hand1ov1eternity/Pokedex.app,
 Then open index.html in your browser.
 
 ---
 
-Powered by curiosity, caffeine, and Pokéballs 🎯
+Powered by curiosity, caffeine, and Pokéballs 🎯 — always a work in progress 🚧
