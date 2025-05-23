@@ -1,38 +1,48 @@
-**POKEMON REPOSITORY**
+# 🧬 Pokémon Repository
 
-**Overview**
+---
 
-The Pokémon Repository is a web application that allows users to browse a list of Pokémons and view their details. It serves as a practical project for learning JavaScript, API interactions, and responsive design using Bootstrap.
+## 🎯 Features
 
-**Features**
+- 🎮 **Interactive Pokémon List**  
+  Each Pokémon is rendered as a clickable button from a dynamic list.
 
-List of Pokémon with interactive buttons.
+- 🧾 **Detailed Modal View**  
+  View height, image, and other Pokémon info in a Bootstrap modal popup.
 
-Modal displaying Pokémon details, including height and image.
+- 📱 **Responsive Design**  
+  Fully responsive layout for desktop, tablet, and mobile.
 
-Responsive layout for optimal viewing on all devices.
+---
+
+## 🛠️ Technologies Used
+
+HTML5
+CSS3
+JavaScript
+Bootstrap
+PokéAPI (https://pokeapi.co/)
 
 
-**Technologies**
+---
 
-HTML, CSS, JavaScript
+## ⚙️ How It Works
 
-Bootstrap for styling and responsiveness
+1. 🔁 The app loads data from the [PokéAPI](https://pokeapi.co/).
+2. 📋 Each Pokémon appears as a button in a scrollable list.
+3. 🔍 Clicking a button opens a **Bootstrap modal** with:
+   - Pokémon name
+   - Image (sprite)
+   - Height
 
-PokéAPI for fetching Pokémon data
+---
 
-**How It Works**
+## 📦 Installation
 
-The application fetches Pokémon data from the PokéAPI and displays each Pokémon as a button in a list.
-
-Clicking a button opens a modal that shows the Pokémon's image and height.
-
-Custom CSS enhances the visual appearance and user experience.
-
-**Installation**
-
-Clone the repository:
-
+To run locally:
 git clone https://github.com/hand1ov1eternity/Pokedex.app
+Then open index.html in your browser.
 
-Open the index.html file in a browser to use the app.
+---
+
+Powered by curiosity, caffeine, and Pokéballs 🎯
